@@ -16,8 +16,8 @@
  * Plugin URI:        http://wordpress.org/plugins/evm-back-to-top
  * Description:       This is a simple plugin with a few cusomization options that adds a back to top link at bottom of page. 
  * Version:           1.0.0
- * Author:            Jon Huther
- * Author URI:        https://github.com/eliteventure
+ * Author:            Jon Huther, Elite Venture Media
+ * Author URI:        http://evm.io
  * Text Domain:       plugin-name-locale
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt

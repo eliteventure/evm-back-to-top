@@ -86,8 +86,8 @@ class EVM_Back_To_Top_Admin {
 		 * Read more about actions and filters:
 		 * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
-		add_action( '@TODO', array( $this, 'action_method_name' ) );
-		add_filter( '@TODO', array( $this, 'filter_method_name' ) );
+		add_action( '@TODO', array( $this, 'action_method' ) );
+		add_filter( '@TODO', array( $this, 'filter_method' ) );
 
 	}
 
@@ -230,8 +230,14 @@ class EVM_Back_To_Top_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function action_method_name() {
+	public function action_method() {
 		// @TODO: Define your action hook callback here
+		echo("<h1>THIS IS ECHOED TEXT RIGHT UP HERE!!!</h1>");
+
+		register_setting( 'super-settings-group', 'EVM_Back_To_Top_link_text' );
+		register_setting( 'super-settings-group', 'EVM_Back_To_Top_alignment' );
+		register_setting( 'super-settings-group', 'EVM_Back_To_Top_text_color' );
+		register_setting( 'super-settings-group', 'EVM_Back_To_Top_background_color' );
 	}
 
 	/**
@@ -243,7 +249,7 @@ class EVM_Back_To_Top_Admin {
 	 *
 	 * @since    1.0.0
 	 */
-	public function filter_method_name() {
+	public function filter_method() {
 		// @TODO: Define your filter hook callback here
 	}
 
