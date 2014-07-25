@@ -86,7 +86,7 @@ class EVM_Back_To_Top_Admin {
 		 * Read more about actions and filters:
 		 * http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
-		add_action( '@TODO', array( $this, 'action_method' ) );
+		add_action( 'admin_init', array( $this, 'action_method' ) );
 		add_filter( '@TODO', array( $this, 'filter_method' ) );
 
 	}
@@ -232,12 +232,14 @@ class EVM_Back_To_Top_Admin {
 	 */
 	public function action_method() {
 		// @TODO: Define your action hook callback here
-		echo("<h1>THIS IS ECHOED TEXT RIGHT UP HERE!!!</h1>");
+		$this->register_settings();
+	}
 
-		register_setting( 'super-settings-group', 'EVM_Back_To_Top_link_text' );
-		register_setting( 'super-settings-group', 'EVM_Back_To_Top_alignment' );
-		register_setting( 'super-settings-group', 'EVM_Back_To_Top_text_color' );
-		register_setting( 'super-settings-group', 'EVM_Back_To_Top_background_color' );
+	public function register_settings() {
+		register_setting( 'evm-back-to-top-settings-group', 'EVM_Back_To_Top_link_text' );
+		register_setting( 'evm-back-to-top-settings-group', 'EVM_Back_To_Top_alignment' );
+		register_setting( 'evm-back-to-top-settings-group', 'EVM_Back_To_Top_text_color' );
+		register_setting( 'evm-back-to-top-settings-group', 'EVM_Back_To_Top_background_color' );
 	}
 
 	/**

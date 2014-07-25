@@ -22,21 +22,20 @@
 	<p>Use the form below to customize your Back To Top link.</p>
 	<form method="post" action="options.php">
 
-		<?php settings_fields( 'super-settings-group' ); ?>
-		<?php do_settings_sections( 'super-settings-group' ); ?>
+		<?php settings_fields( 'evm-back-to-top-settings-group' ); ?>
+		<?php do_settings_sections( 'evm-back-to-top-settings-group' ); ?>
 
 		<!-- Property: Link text -->
 		<p><label for="EVM_Back_To_Top_link_text">Link Text</label><br>
-		<input type="text" id="EVM_Back_To_Top_link_text" name="EVM_Back_To_Top_link_text" placeholder="Example: Back to Top" value="<?php echo get_option('EVM_Back_To_Top_link_text'); ?>"></p>
+		<input type="text" id="EVM_Back_To_Top_link_text" name="EVM_Back_To_Top_link_text" placeholder="Example: Back to Top" value="<?php echo get_option("EVM_Back_To_Top_link_text"); ?>"></p>
 		
 		<!-- Property: Alignment -->
 		<p><label for="EVM_Back_To_Top_alignment">Alignment</label><br>
-		<input type="text" id="EVM_Back_To_Top_alignment" name="EVM_Back_To_Top_alignment" list="alignment_list" placeholder="Example: Center">
-		<datalist id="alignment_list">
-			<option value="Left">
-			<option value="Center">
-			<option value="Right">
-		</datalist>
+		<select id="EVM_Back_To_Top_alignment" name="EVM_Back_To_Top_alignment">
+			<option value="Left" <?php if(get_option("EVM_Back_To_Top_alignment")=="Left"){echo "selected=selected";} ?>>Left</option>
+			<option value="Center" <?php if(get_option("EVM_Back_To_Top_alignment")=="Center"){echo "selected=selected";} ?>>Center</option>
+			<option value="Right" <?php if(get_option("EVM_Back_To_Top_alignment")=="Right"){echo "selected=selected";} ?>>Right</option>
+		</select>
 		</p>
 		<!-- Property: Text Color -->
 		<p><label for="EVM_Back_To_Top_text_color">Text Color</label><br>
