@@ -236,10 +236,17 @@ class EVM_Back_To_Top_Admin {
 	}
 
 	public function register_settings() {
-		register_setting( 'evm-back-to-top-settings-group', 'EVM_Back_To_Top_link_text' );
+		register_setting( 'evm-back-to-top-settings-group', 'EVM_Back_To_Top_link_text');
 		register_setting( 'evm-back-to-top-settings-group', 'EVM_Back_To_Top_alignment' );
 		register_setting( 'evm-back-to-top-settings-group', 'EVM_Back_To_Top_text_color' );
 		register_setting( 'evm-back-to-top-settings-group', 'EVM_Back_To_Top_background_color' );
+	}
+	public function validate_input($evm_back_to_top_input) {
+		$newinput['text_string'] = trim($evm_back_to_top_input['text_string']);
+		if(!preg_match('/^[a-z0-9 .\-]+$/i', $newinput['text_string'])) {
+			$newinput['text_string'] = '';
+		}
+		return $newinput;
 	}
 
 	/**
