@@ -1,1 +1,10 @@
 /* This stylesheet is used to style the public-facing components of the plugin. */
+#evm_back_to_top{
+    cursor: pointer;
+    cursor: hand;
+    padding: 10px;
+    display: block;
+}
+#evm_back_to_top:hover{
+    opacity: .8;
+}

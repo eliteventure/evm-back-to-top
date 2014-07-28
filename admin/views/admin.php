@@ -20,8 +20,6 @@
 	<!-- @TODO: Provide markup for your options page here. -->
 
 	<p>Use the form below to customize your Back To Top link.</p>
-
-	<?php settings_errors(); ?>
 	
 	<form method="post" action="options.php">
 
@@ -35,9 +33,9 @@
 		<!-- Property: Alignment -->
 		<p><label for="EVM_Back_To_Top_alignment">Alignment</label><br>
 		<select id="EVM_Back_To_Top_alignment" name="EVM_Back_To_Top_alignment">
-			<option value="Left" <?php if(get_option("EVM_Back_To_Top_alignment")=="Left"){echo "selected=selected";} ?>>Left</option>
-			<option value="Center" <?php if(get_option("EVM_Back_To_Top_alignment")=="Center"){echo "selected=selected";} ?>>Center</option>
-			<option value="Right" <?php if(get_option("EVM_Back_To_Top_alignment")=="Right"){echo "selected=selected";} ?>>Right</option>
+			<option value="left" <?php if(get_option("EVM_Back_To_Top_alignment")=="Left"){echo "selected=selected";} ?>>Left</option>
+			<option value="center" <?php if(get_option("EVM_Back_To_Top_alignment")=="Center"){echo "selected=selected";} ?>>Center</option>
+			<option value="right" <?php if(get_option("EVM_Back_To_Top_alignment")=="Right"){echo "selected=selected";} ?>>Right</option>
 		</select>
 		</p>
 		<!-- Property: Text Color -->

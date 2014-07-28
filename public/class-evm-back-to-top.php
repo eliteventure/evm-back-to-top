@@ -78,7 +78,7 @@ class EVM_Back_To_Top {
 		/* Define custom functionality.
 		 * Refer To http://codex.wordpress.org/Plugin_API#Hooks.2C_Actions_and_Filters
 		 */
-		add_action( 'wp_footer', array( $this, 'action_method' ) );
+		add_action( 'wp_footer', array( $this, 'build_div' ) );
 		add_filter( '@TODO', array( $this, 'filter_method' ) );
 
 	}
@@ -288,10 +288,6 @@ class EVM_Back_To_Top {
 	 *
 	 * @since    1.0.0
 	 */
-	public function action_method() {
-		// @TODO: Define your action hook callback here
-		$this->build_div();
-	}
 
 	public function build_div() {
 		// @TODO: Define your action hook callback here
@@ -299,8 +295,8 @@ class EVM_Back_To_Top {
 		echo "<div style=\" 
 				background-color:".get_option("EVM_Back_To_Top_background_color")."; 
 				text-align:".get_option("EVM_Back_To_Top_alignment").";\">
-				<a href=\"#\" style=\"
-					color:".get_option("EVM_Back_To_Top_text_color").";\">".get_option("EVM_Back_To_Top_link_text")."
+				<a style=\"
+					color:".get_option("EVM_Back_To_Top_text_color").";\" id=\"evm_back_to_top\">".get_option("EVM_Back_To_Top_link_text")."
 				</a>
 			</div>";
 	}
